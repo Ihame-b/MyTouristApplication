@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <link rel="shortcut icon" href="../images/rwanda.svg">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>ADMIN | DASHBOARD</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel='stylesheet' href='https://netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.min.css'>
+  <link rel="stylesheet" type="text/css" media="screen" href="../css/admin.css">
+  <script src='http://code.jquery.com/jquery-1.11.3.min.js'></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
+  <script src="../js/checktoken.js"></script>
+</head>
+
+<body>
+
+  <div>
+    <nav role='navigation'>
+      <ul>
+        <li><a href="">
+            <i class="icon-desktop"></i>Dashboard
+          </a></li>
+        <li onclick="showaddNew()"><a>
+            <i class="icon-plus"></i>Add new location
+          </a></li>
+        <li onclick="showBooked()"><a>
+            <i class="icon-bookmark"></i>Booked
+          </a></li>
+        <li onclick="Logout()"><a>
+            <i class="icon-arrow-right"></i>Logout
+          </a></li>
+      </ul>
+    </nav>
+    <div>
+      <div class="top-bar">
+        <div>
+          <div>
+            <img src="../images/user-4.png">
+            <span class="tablet">
+              <!-- username here-->
+            </span>
+          </div>
+          <button class="icon-plus" id="plus" onclick="showaddNew()"></button>
+          <button class="icon-bookmark" onclick="showBooked()"></button>
+          <button onclick="showProfile()" class="icon-gear"></button>
+        </div>
+        <button onclick="Logout()"><i class="icon-signout"></i><span class="desktop">Logout</span></button>
+      </div>
+      <div class="page">
+        <div id="main">
+          <h1>Dashboard</h1>
+          <canvas></canvas>
+          <h2></h2>
+          <!-- sites table -->
+          <div class="all-places">
+            <div class="table-wrapper">
+              <div class="search-box">
+                <input type="text" class="t_search" id="t_search" onkeyup="Filter(this)" placeholder="Search.."
+                  title="Type to find places">
+              </div>
+              <table class="fl-table" id="tourists_Table">
+                <thead>
+                  <tr>
+                    <th>Site Name</th>
+                    <th>Category</th>
+                    <th>Location</th>
+                    <th>Owner Email</th>
+                    <th>Owner Phone</th>
+                  </tr>
+                </thead>
+                <tbody class="sites">
+                  <!-- all sites display here -->
+                <tbody>
+              </table>
+            </div>
+          </div>
+          <!-- booked places -->
+          <div class="all-booked">
+            <div class="table-wrapper">
+              <div class="search-box">
+                <input type="text" class="t_search" id="t_search" onkeyup="Filter(this)" placeholder="Search.."
+                  title="Type to find booked">
+              </div>
+              <table class="fl-table" id="tourists_Table">
+                <thead>
+                  <tr>
+                    <th>Tourist Name</th>
+                    <th>Phone number</th>
+                    <th>Booked site</th>
+                    <th>Booked_from</th>
+                    <th>To</th>
+                    <th>Location</th>
+                  </tr>
+                </thead>
+                <tbody class="allBooked">
+                  <!-- booked sites display here -->
+                <tbody>
+              </table>
+            </div>
+          </div>
+          <!-- add new location -->
+          <div class='add-new'>
+            <div class="form">
+              <p class='field required'>
+                <label style='color: red' id='error'></label>
+                <label id='message'></label>
+                <label class='label required' for='sname'>Site Name</label>
+                <input class='text-input' id='sname' name='sname' required type='text' value=''>
+                <label class='label' for='Destination'>Destination</label>
+                <select class='select' id='destination'>
+                  <option selected disabled='true' value="">Select...</option>
+                  <option value="1">Kigali City</option>
+                  <option value="2">Southern Province</option>
+                  <option value="3">Northern Province</option>
+                  <option value="4">Eastern Province</option>
+                  <option value="5">Western Province</option>
+                </select>
+                <label class='label' for='category'>Category</label>
+                <select class='select' id='category'>
+                  <option selected disabled='true' value="">Select...</option>
+                  <option value="Transportation">Transportation</option>
+                  <option value="Accomodation">Accomodation</option>
+                  <option value="Hotel/Restaurants">Hotel/Restaurants</option>
+                  <option value="National Parks">National Parks</option>
+                  <option value="Culture & Heritage">Culture & Heritage</option>
+                  <option value="Sports & Advanture">Sports & Advanture</option>
+                </select>
+                <label class='label' for='about'>About</label>
+                <textarea class='textarea' cols='50' id='about' name='about' rows='4'></textarea>
+              </p>
+              <p class='field half required'>
+                <label class='label required' for='image'>Image Url</label>
+                <input class='text-input' id='image' name='image' required type='text' value=''>
+              </p>
+              <p class='field half'>
+                <input class='button' id="addSite" onclick="addSite()" type='submit' value='Publish'>
+              </p>
+            </div>
+          </div>
+          <!-- Profile -->
+          <div class='user-profile'>
+            <div class="form">
+              <p class='field required'>
+                <label id='message'></label>
+              </p>
+              <p class='field half required'>
+                <label class='label required' for='fname'>First Name</label>
+                <input class='text-input' id='fname' name='fname' required type='text' value=''>
+              </p>
+              <p class='field half required'>
+                <label class='label required' for='lname'>Last Name</label>
+                <input class='text-input' id='lname' name='lname' required type='text' value=''>
+              </p>
+              <p class='field half required'>
+                <label class='label required' for='phone'>Phone Number</label>
+                <input class='text-input' id='phone' name='phone' required type='text' value=''>
+              </p>
+
+              <p class='field half required'>
+                <label class='label required' for='email'>Email</label>
+                <input class='text-input' id='email' name='email' required type='email' value='' disabled>
+              </p>
+              <p class='field half required'>
+                <label class='label required' for='password'>Change Password</label>
+                <input class='text-input' id='password' name='password' required type='password'
+                  placeholder="New password" value=''>
+              </p>
+              <p class='field half required'>
+                <label class='label required' for='confirm_password'>Confirm password</label>
+                <input class='text-input' id='confirm' placeholder="Confirm" name='confirm' required type='password'
+                  value=''>
+              </p>
+              <p class='field half required'>
+                <label class='label required' for='address'>Address</label>
+                <input class='text-input' id='address' name='address' required type='text' value=''>
+              </p>
+              <p class='field half'>
+                <input class='button' onclick="saveChanges(this)" type='submit' value='Save changes'>
+              </p>
+            </div>
+          </div>
+          <!-- booking -->
+          <div class='booking-form'>
+            <div class="form">
+              <p class='field'>
+                <label id='message'></label>
+                <label class='label' for='sname'>Site Name</label>
+                <input class='text-input' id='sname' name='sname' required type='text' value='' disabled>
+                <input class='text-input' id='sid' name='sid' required type='hidden' value='' disabled>
+                <label class='label' for='Destination'>Destination</label>
+                <input class='text-input' id='destination' name='destination' required type='text' value='' disabled>
+                <label class='label' for='category'>Category</label>
+                <input class='text-input' id='category' name='category' required type='text' value='' disabled>
+                <label class='label' for='about'>About</label>
+                <textarea class='textarea' cols='50' id='about' name='about' rows='4' disabled></textarea>
+              </p>
+              <p class='field half'>
+                <label class='label' for='bdate'>Select a date for booking from:</label>
+                <input class='text-input' id='bdate' name='bdate' required type='date' value=''>
+              </p>
+              <p class='field half'>
+                <label class='label' for='edate'>To:</label>
+                <input class='text-input' id='edate' name='edate' required type='date' value=''>
+              </p>
+              <p class='field half'>
+                <label class='label' for='people'>Number of People</label>
+                <input class='text-input' id='people' name='people' required type='number' value=''>
+              </p>
+              <p class='field half'>
+                <input class='button' onclick="bookSite(this)" type='submit' value='Book now'>
+              </p>
+            </div>
+          </div>
+        </div>
+        <aside>
+          <div id="visitor" class="widget featured">
+            <h2>Visitors</h2>
+            <p>14,679</p>
+          </div>
+          <div class="widget">
+            <header>
+              <h2>Quick Links</h2>
+            </header>
+            <menu type="list" class="menu-location">
+              <li onclick="showProfile()"><a>Settings<i class="icon-cog"></i></a></li>
+              <li onclick="showAllPlaces()"><a>My locations <i class="icon-home"></i></a></li>
+            </menu>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </div>
+  <script src="../js/script.js"></script>
+</body>
+
+</html>

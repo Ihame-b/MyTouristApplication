@@ -1,0 +1,221 @@
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <link rel="shortcut icon" href="images/rwanda.svg">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Rwanda Tourism</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js" type="text/javascript"></script>
+  <link rel='stylesheet' href='https://netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.min.css'>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+  <link rel="stylesheet" type="text/css" media="screen" href="css/style.css">
+  <link rel="stylesheet" type="text/css" media="screen" href="css/chat.css">
+  <script src="js/main.js"></script>
+  <script src='http://code.jquery.com/jquery-1.11.3.min.js'></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
+</head>
+
+<body>
+  <div class="container">
+    <nav id="scrolled">
+      <div class="container">
+        <div class="logo">
+          <a href="/">
+            <img src="images/rwanda.svg">
+          </a>
+        </div>
+        <div id="navbar" class="main-menu">
+          <ul class="nav-list">
+            <li class="active"><a href="/"><i class="fas fa-comments"></i>Home</a></li>
+
+            <li class="dropdown">
+              <div class="dropdown-active">
+                Destinations
+              </div>
+              <ul id="dropdown-menu">
+                <li onclick="getLocation(1)"><a>Kigali City</a></li>
+                <li onclick="getLocation(2)"><a>Southern Province</a></li>
+                <li onclick="getLocation(3)"><a>Northern Province</a></li>
+                <li onclick="getLocation(4)"><a>Eastern Province</a></li>
+                <li onclick="getLocation(5)"><a>Western Province</a></li>
+                <li onclick="getLocation('all')"><a>All</a></li>
+              </ul>
+            </li>
+            <li class="dropdown">
+              <div class="dropdown-active">
+                Other Interests
+              </div>
+              <ul id="dropdown-menu">
+                <li><a href="/">Itenararies</a></li>
+                <li><a href="/">Highlighted Tourism</a></li>
+              </ul>
+            </li>
+            <li class="dropdown">
+              <div class="dropdown-active">
+                Book a Trip
+              </div>
+              <ul id="dropdown-menu">
+                <li><a href="/login">Create an acount/Sign in</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <header class="header headline">
+      <div class="text-box inner">
+        <h1 class="heading-primary"><span class="heading-primary-main">Welcome to Rwanda</span></h1>
+        <h2><span class="heading-primary-sub">Our beauty our culture</span></h2>
+
+        <a href="#content" class="btn btn-white btn-animated">Get Started</a>
+      </div>
+
+    </header>
+    <div>
+      <div class="search-form">
+
+        <select name="" id="dname">
+          <option selected disabled='true' value="all">Destinations...</option>
+          <option value="1">Kigali City</option>
+          <option value="2">Southern Province</option>
+          <option value="3">Northern Province</option>
+          <option value="4">Eastern Province</option>
+          <option value="5">Western Province</option>
+          <option value="all">All</option>
+        </select>
+        <select name="" id="category">
+          <option selected disabled='true' value="all">Categories...</option>
+          <option value="Transportation">Transportation</option>
+          <option value="Accomodation">Accomodation</option>
+          <option value="Hotel/Restaurants">Hotel/Restaurants</option>
+          <option value="National Parks">National Parks</option>
+          <option value="Culture & Heritage">Culture & Heritage</option>
+          <option value="Sports & Advanture">Sports & Advanture</option>
+          <option value="all">All</option>
+        </select>
+        <input type="submit" onclick="searchSite(this)" value="Search">
+
+      </div>
+    </div>
+    <div class="content" id='content'>
+      <!--About Us Section-->
+      <section id="about">
+        <div class="container">
+
+          <header class="section-header">
+            <center>
+              <h2>About Us</h2>
+              <p>
+                Rwanda is a landlocked East African country with a green, mountainous landscape. Its renowned Volcanoes
+                National Park is home to mountain gorillas and golden monkeys. The park encompasses 4,507m-tall Mt.
+                Karisimbi and 4 other forested volcanoes. In the southwest is Nyungwe National Park,
+                with ancient montane rainforest that's a habitat for chimpanzees and other primates.
+              </p>
+            </center>
+          </header>
+        </div>
+      </section>
+      <!-- #about -->
+      <div class="tourism-card">
+
+        <div class="meta">
+          <img src="./images/rwanda.jpg" class="photo" />
+        </div>
+        <div class="description">
+          <h1 class="sname">Rwanda</h1>
+          <h2 class="location">Country in East Africa</h2>
+          <p class="about">
+            Rwanda is a landlocked East African country with a green, mountainous landscape. Its renowned Volcanoes
+            National Park is home to mountain gorillas and golden monkeys. The park encompasses 4,507m-tall Mt.
+            Karisimbi and 4 other forested volcanoes. In the southwest is Nyungwe National Park,
+            with ancient montane rainforest that's a habitat for chimpanzees and other primates.
+          </p>
+        </div>
+      </div>
+    </div>
+    <script>
+      function initFreshChat() {
+        window.fcWidget.init({
+          token: "dbf5162b-eef9-40f7-a036-4e779a81d93d",
+          host: "https://wchat.freshchat.com"
+        });
+      }
+      function initialize(i, t) { var e; i.getElementById(t) ? initFreshChat() : ((e = i.createElement("script")).id = t, e.async = !0, e.src = "https://wchat.freshchat.com/js/widget.js", e.onload = initFreshChat, i.head.appendChild(e)) } function initiateCall() { initialize(document, "freshchat-js-sdk") } window.addEventListener ? window.addEventListener("load", initiateCall, !1) : window.attachEvent("load", initiateCall, !1);
+    </script>
+    <!-- chatbox -->
+    <div class="city"></div>
+    <!-- footer -->
+    <div class="footer">
+      <div class="section logo">
+        <a href="index.html">
+          <img src="./images/rwanda.svg">
+        </a>
+      </div>
+      <div class="section">
+        <h3>Quick Links</h3>
+        <ul>
+
+          <li class="active"><a href="/">Home</a></li>
+          <li><a href="/login">Become a manager</a></li>
+          <li><a href="/Subscribe/design/index.html">Subscribe for Us</a></li>
+        </ul>
+      </div>
+      <div class="section">
+        <h3>Social</h3>
+        <ul>
+          <li>Facebook</li>
+          <li>Twitter</li>
+        </ul>
+      </div>
+    </div>
+    <div class="bottom">
+      Copyright &copy;<span>Rwanda Tourism 2021</span>
+    </div>
+    <!-- footer -->
+  </div>
+  <!-- a preloader -->
+  <div id="preloader"></div>
+  <script src="js/script.js"></script>
+  <script type="text/javascript"></script>
+     <!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/7.1.0/firebase-app.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="https://www.gstatic.com/firebasejs/7.1.0/firebase-analytics.js"></script>
+
+<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyC4cbTXqEgVKTfTkdouZJlV23fEp2jdolk",
+    authDomain: "tourism-16cf9.firebaseapp.com",
+    databaseURL: "https://tourism-16cf9.firebaseio.com",
+    projectId: "tourism-16cf9",
+    storageBucket: "tourism-16cf9.appspot.com",
+    messagingSenderId: "944168995629",
+    appId: "1:944168995629:web:487e7abe62a026474161a4",
+    measurementId: "G-Q3KPH41R7J"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  firebase.analytics();
+
+  function getMessages() {
+
+  }
+
+  function askQuestion (text) {
+    function writeUserData(userId, name, email, imageUrl) {
+      firebase.database().ref('message/').set({
+        userText: text,
+        date: new Date()
+  });
+}
+  }
+
+</script>
+  </script>
+</body>
+
+</html>

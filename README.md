@@ -1,3 +1,1 @@
 # MyTouristApplication
-# MyTouristApplication
-# MyTouristApplication
