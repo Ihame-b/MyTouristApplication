@@ -1,17 +1,17 @@
 @import url(https://zavoloklom.github.io/material-design-iconic-font/css/docs.md-iconic-font.min.css);
 @import url(https://fonts.googleapis.com/css?family=Open+Sans:300,400,700);
 :root {
-    --primary_blue: #009AF4;
-    --primary_green: #1C8F31;
-    --primary_yellow:#EFEF00;
-    --main_white: #fff;
-    --light_glay: #555;
+    --primary_blue: #07283b;
+    --primary_green: #b5e7be;
+    --primary_yellow:#505013;
+    --main_white: rgb(255, 255, 255);
+    --light_glay: #353333;
     --main_gradient: linear-gradient(45deg, 
-    #009AF4,
-    #1C8F31,
-    #EFEF00);
+    #364249,
+    #123f1a,
+    #535321);
     --nav_gradient: linear-gradient(180deg, 
-    #009AF4,
+    #246e99,
     rgba(10, 138, 10, 0.2),
     rgba(233, 250, 0, 0.1));
     --trans_gradient: linear-gradient(45deg, 
@@ -50,6 +50,104 @@ html {
     position: relative;
     clip-path: polygon(10 0, 100% 0, 100% 90vh, 0 70%);
 }
+
+
+/* my main */
+
+main{
+  background-image: url("/images/ingagi.jpeg");
+}
+.flex{
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  }
+  .container1{
+      padding: 0 20px;
+      margin: 0 auto;
+      width: 100%;
+      width: 1000px;
+  }
+
+.flex > div{
+flex: 1;
+}
+
+
+nav{
+    justify-content: space-between;
+    margin: 40px;
+    align-items: center;
+}
+.box{
+    border-radius: 15px;
+    background-color: rgb(66, 211, 22);
+    box-shadow: 0 0 10px rgb(0,0,0,0.15);
+    margin: 40px 0;
+    padding: 60px;
+}
+.small-box{
+    display: inline-block;
+    position: relative;
+    margin-bottom: -50%;
+    z-index: 1;
+}
+.box img{
+    width: 80%;
+}
+.btn{
+  border: none;
+  cursor: pointer;
+  font-weight: 700;
+  box-shadow: 0 0 10px rgb(0,0,0,0.15);
+  padding: 15px 60px;
+  border-radius: 50px;
+  background-color: white;
+  font-size: 16px
+}
+.btn-primary{
+  background-color: hsl(130, 33%, 26%);
+  color: #fff;
+}
+
+/* footer style */
+
+.social-list {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 0;
+	list-style-type: none;
+}
+
+.social-list li {
+	margin: 10px;
+}
+
+.social-list li a {
+	border: 1px solid hsl(0, 7%, 89%);
+	border-radius: 50%;
+	color: hsl(223, 87%, 63%);
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	font-size: 18px;
+	height: 40px;
+	width: 40px;
+	text-decoration: none;
+}
+
+.social-list li a:hover {
+	background-color: hsl(223, 87%, 63%);
+	border-color: hsl(223, 87%, 63%);
+	color: #fff;
+}
+
+footer p {
+	color: hsl(0, 0%, 59%);
+}
+
+
 
 .logo{
 width: 80px;
@@ -772,6 +870,6 @@ nav.scrolled {
       .brand-box{
         display: none
       }
-    
-    
+  
 }
+
