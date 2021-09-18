@@ -44,7 +44,7 @@ ul li{
   position: relative;
   z-index: 998;
   overflow: hidden;
-  background: var(--main_gradient);
+  /* background: var(--main_gradient); */
 }
 
 .fab > i {

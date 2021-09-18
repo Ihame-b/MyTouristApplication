@@ -11,7 +11,7 @@
     #123f1a,
     #535321);
     --nav_gradient: linear-gradient(180deg, 
-    #246e99,
+    #6a2499,
     rgba(10, 138, 10, 0.2),
     rgba(233, 250, 0, 0.1));
     --trans_gradient: linear-gradient(45deg, 
@@ -44,7 +44,7 @@ html {
 .header {
     height: 90vh;
     background-image: 
-    url('../images/images1.jpeg');
+    url('../images/cover.jpg');
     background-size: cover;
     background-position: top;
     position: relative;
@@ -66,7 +66,7 @@ main{
       padding: 0 20px;
       margin: 0 auto;
       width: 100%;
-      width: 1000px;
+      /* width: 1000px; */
   }
 
 .flex > div{
@@ -547,7 +547,7 @@ width: 80px;
 
 #about {
   padding: 60px 250px 40px 250px;
-  background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ),url(../images/cover.jpg) no-repeat;
+  background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ),url(../images/Africa.jpeg) no-repeat;
   background-size: cover;
 	background-attachment: fixed;
     -webkit-background-size: cover;
@@ -853,6 +853,9 @@ nav.scrolled {
     .logo {
         display: none
     }
+
+
+    
     nav.scrolled {
         background-image: var(--nav_gradient),
         url('http://rdb.rw/demo2/tourism/wp-content/uploads/2018/01/kgl-copy-5782936602-1cee6f8a33.jpg');
