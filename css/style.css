@@ -493,6 +493,14 @@ width: 80px;
     text-decoration: none;
     color: var(--main_white);
   }
+
+  /* nav .container .main-menu ul li a, nav .container .main-menu ul li .dropdown-active {
+    padding: 15px 3px;
+    font-size: 9px;
+    text-decoration: none;
+    color: var(--main_white);
+  } */
+
   nav .container .main-menu ul li a i.fas, nav .container .main-menu ul li .dropdown-active i.fas {
     margin-right: 8px;
   }
@@ -524,7 +532,7 @@ width: 80px;
     padding: 16px 12px;
     box-sizing: border-box;
     background: transparent;
-    transition: background 0.2s ease-in-out;
+    transition:  0.2s ease-in-out;
     width: 100%;
   }
   nav .container .main-menu ul li.dropdown #dropdown-menu li a:hover {
